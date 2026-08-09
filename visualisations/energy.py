@@ -47,7 +47,7 @@ def energy(pendulum):
 
     plt.plot(t,E_total, color='white', label='Total energy')
 
-    plt.title('Angles over time')
+    plt.title('Energy stores over time')
     plt.xlabel("Time (s)")
     plt.ylabel("Angle (rad)")
 
