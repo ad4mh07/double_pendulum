@@ -37,8 +37,7 @@ def energy(pendulum):
     E_GP2 = m2 * g * y2
 
     E_total = E_K1 + E_K2 + E_GP1 + E_GP2
-
-    plt.style.use("dark_background") 
+ 
     plt.plot(t,E_K1, color='orange', label='Kinetic energy, pivot 1')
     plt.plot(t,E_K2, color='pink', label='Kinetic energy, pivot 2')
 
