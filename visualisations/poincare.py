@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def poincare(pendulum):
+def poincare(pendulum, color='black'):
     t = pendulum.time
     theta1 = pendulum.theta1
     theta2 = pendulum.theta2
@@ -37,10 +37,13 @@ def poincare(pendulum):
     theta2_w = np.mod(theta2_s + np.pi, 2 * np.pi) - np.pi
 
     fig, ax = plt.subplots(figsize=(7, 6))
-    ax.scatter(theta2_w, omega2_s, s=2, c='k', alpha=0.6)
+
+    ax.scatter(theta2_w, omega2_s, s=2, alpha=0.6, color=color)
     ax.set_xlabel('theta_2')
     ax.set_ylabel('omega_2')
     ax.set_title('Poincaré section')
+
+    print(theta2_w, omega2_s)
     plt.show()
 
     
