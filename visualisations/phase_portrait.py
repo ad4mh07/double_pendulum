@@ -8,6 +8,7 @@ def phase_portrait(pendulum):
     omega2 = pendulum.omega2
 
     fig, ax = plt.subplots(2, 1, figsize=(9, 6))
+    fig.suptitle('Phase Portraits')
 
     ax[0].plot(theta1, omega1)
     ax[0].set_xlabel('theta1')
