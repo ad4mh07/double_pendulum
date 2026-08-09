@@ -23,7 +23,6 @@ def omegas(pendulum):
     omega2 = pendulum.omega2
     t=pendulum.time
 
-    plt.style.use("dark_background") 
     plt.plot(t,omega1, color='pink', label='omega1')
     plt.plot(t,omega2, color= 'cyan', label='omega2')
 
