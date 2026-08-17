@@ -12,7 +12,6 @@ from ..visualisations.lyapunov import lyapunov
 import numpy as np
 
 model = double_pendulum(m1=5, m2=5, l1=3, l2=3, θ1_init=3/2 * np.pi, θ2_init=np.pi/2, time=[0,30])
-
 model.solve()
 
 animate(model)
@@ -27,6 +26,8 @@ energy(model)
 
 phase_portrait(model)
 
-poincare(model)
+lyapunov(model, 10000)
 
-lyapunov(model, 100)
+model = double_pendulum(m1=5, m2=5, l1=3, l2=3, θ1_init=3/2 * np.pi, θ2_init=np.pi/2, time=[0,1000])
+model.solve()
+poincare(model)
