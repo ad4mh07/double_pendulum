@@ -14,6 +14,7 @@ import numpy as np
 model = double_pendulum(m1=1, m2=1, l1=1, l2=1, θ1_init=np.pi/6, θ2_init=np.pi/6, time=[0,30])
 model.solve()
 
+
 animate(model)
 
 trajectory(model)
@@ -29,5 +30,9 @@ phase_portrait(model)
 poincare(model)
 
 lyapunov(model, 100)
+
+
+model = double_pendulum(m1=1, m2=1, l1=1, l2=1, θ1_init=np.pi/6, θ2_init=np.pi/6, time=[0,1000])
+model.solve()
 
 poincare(model)
