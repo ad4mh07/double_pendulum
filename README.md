@@ -59,7 +59,6 @@ double_pendulum/
 |   |-- animate.py
 |   |-- energy.py
 |   |-- lyapunov.py
-|   |-- omegas.py
 |   |-- phase_portrait.py
 |   |-- poincare.py
 |   |-- trajectory.py
@@ -74,7 +73,6 @@ double_pendulum/
 |   |-- animate.gif
 |   |-- energy.png
 |   |-- lyapunov.png
-|   |-- omegas.py
 |   |-- phase_portrait.png
 |   |-- poincare.png
 |   |-- trajectory.png
@@ -91,11 +89,10 @@ pendulums:
   physics: contains the system of differential equations used in double_pendulum
 
 visualisations:
-  angles: plots the angles of both pivots over time
+  angles: plots the angles and / or angular velocities of both pivots over time
   animate: creates an animation of the pendulum
   energy: plots the different energy stores over time
   lyapunov: explores the degree of chaos using Lyapunov exponent estimation
-  omegas: plots the angular velocities of both pivots over time
   phase_portrait: plots phase portraits (plots the theta values against the omega values)
   poincare: performs Poincarè analysis to simplify the system (plots the angle and angular velocity of the end mass every time the first bar / pivot points vertically downwards)
   trajectory: plots the path of the end mass
