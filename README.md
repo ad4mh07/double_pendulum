@@ -4,15 +4,15 @@ Short description of what the project does and what makes it interesting.
 
 My project numerically approximates the behaviour of a customisable double pendulum, and uses this solution to create various visualisations. This project interests me as it covers new visualisation techniques, and has expanded my knowledge on integrators in python and file structures and backend systems for GitHub.
 
-## Overview
+## 1: Overview
 
 A double pendulum has a fixed end point at the centre, attached to a  (weightless) rod attached to a mass / pivot, attached to another weightless rod attached to a mass at the end. This is a great example of chaos theory, as a tiny change in the starting conditions creates massive and unpredictable changes in motion. 
 
 My simulation uses 'solve_ivp' to numerically solve the equations, finding approximations for the angle and angular velocities for both pivots. 
 
-## Physics
+## 2: Physics
 
-### Equations of Motion
+### 2.1: Equations of Motion
 
 The state vector: 
 
@@ -34,16 +34,17 @@ $$
 \dot\omega_2 = \frac{2\sin(\theta_1 - \theta_2)\left(\omega_1^2 l_1 (m_1+m_2) + g(m_1+m_2)\cos\theta_1 + \omega_2^2 l_2 m_2 \cos(\theta_1 - \theta_2)\right)}{l_2\left(2m_1 + m_2 - m_2\cos(2\delta)\right)}
 $$
 
-### Numerical Method
+### 2.2: Numerical Method
 
-Explain:
-- ODE solver used (`RK45`)
-- Integration time
-- Tolerances (`rtol`, `atol`)
-- Why numerical methods are required
+The ODE solver uses the `RK45` method as it is the standard script methods, due to its automatically-adjusting step size balances speed (useful for visualisation methods that benefit from solutions being 1000s of seconds long) and accuracy (which is crucial for such a sensitive simulation).
 
-## Project Structure
+Numerical approximations are required, as the cos and sin terms in both equations, depending on both angles and angular velocities, make it impossible to rearrange for a single variable, and hence no analytical solution can exist.
 
+Its worth noting that the solvers' relative and absolute tolerances are both 1e-8, as this also creates a good balance between performance and accuracy
+
+## 3: The Project 
+
+### 3.1: The file structure
 ```
 double_pendulum/
 |
@@ -51,7 +52,6 @@ double_pendulum/
 |   |-- __init__.py
 |   |-- double_pendulum.py
 |   |-- physics.py
-|   |-- animation.py
 |   
 |-- visualisations/
 |   |--__init__.py
@@ -59,20 +59,24 @@ double_pendulum/
 |   |-- animate.py
 |   |-- energy.py
 |   |-- lyapunov.py
+|   |-- omegas.py
 |   |-- phase_portrait.py
-|   |--poincare.py
+|   |-- poincare.py
 |   |-- trajectory.py
 |
 |-- examples/
-|   |-- example1.py
+|   |-- chaos.py
+|   |-- custom.py
+|   |-- order.py
 |
 |-- figures/
 |   |--angles.png
 |   |-- animate.gif
 |   |-- energy.png
 |   |-- lyapunov.png
+|   |-- omegas.py
 |   |-- phase_portrait.png
-|   |--poincare.png
+|   |-- poincare.png
 |   |-- trajectory.png
 |
 |-- README.md
@@ -80,21 +84,41 @@ double_pendulum/
 |-- requirements.txt
 
 ```
+### 3.2: Details of the main files
 
-## Running the simulation for yourself
+pendulums:
+  double_pendulum: defines the 'pendulum' object class, and includes the method of solving.
+  physics: contains the system of differential equations used in double_pendulum
 
-### Requirements
+visualisations:
+  angles: plots the angles of both pivots over time
+  animate: creates an animation of the pendulum
+  energy: plots the different energy stores over time
+  lyapunov: explores the degree of chaos using Lyapunov exponent estimation
+  omegas: plots the angular velocities of both pivots over time
+  phase_portrait: plots phase portraits (plots the theta values against the omega values)
+  poincare: performs Poincarè analysis to simplify the system (plots the angle and angular velocity of the end mass every time the first bar / pivot points vertically downwards)
+  trajectory: plots the path of the end mass
+
+examples:
+  chaos: contains an example of a chaotic system
+  custom: allows the user to create their own pendulum simulation (see 4.8)
+  order: contains an example of an unchaotic system
+
+## 4: Running the simulation for yourself
+
+### 4.4: Requirements
 - Python 3.9 or later
 - pip
 
-### Clone the repository
+### 4.5: Clone the repository
 
 ```bash
 git clone https://github.com/ad4mh07/double_pendulum.git
 cd double_pendulum
 ```
 
-### Install the package
+### 4.6: Install the package
 
 This installs `pendulums` in editable mode, along with its dependencies (numpy, matplotlib, scipy):
 
@@ -102,7 +126,7 @@ This installs `pendulums` in editable mode, along with its dependencies (numpy, 
 pip install -e .
 ```
 
-### Run an example
+### 4.7: Run an example
 
 ```bash
 python3 pendulums/examples/order.py
@@ -110,6 +134,14 @@ python3 pendulums/examples/order.py
 
 > **Note (macOS/Linux):** if `python` isn't recognised, use `python3` instead.
 
-## How to use 
+## 4.8: Using the function
+As per 3.2, you can run your own simulation in custom.py, and then call any of the different visulatiuons. It's set up so that all that needs to be done is to determine the arguments / initial conditions. Here's a run down of the arguments taken:
+
+
+
+
+### 5: Other
+some visualtions benefit from different parameters. i.e energy, angles, omegas, phase portraits etc are more clear with a shorter time interval. However, lyanpunov and especially poincare only work (well) with a long interval, such as time=[0,1000]. 
+
 
 
