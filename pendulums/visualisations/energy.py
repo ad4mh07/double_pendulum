@@ -1,8 +1,4 @@
-"""       self.theta1 = sol.y[0]
-        self.omega1 = sol.y[1]
-        self.theta2 = sol.y[2]
-        self.omega2 = sol.y[3]
-"""
+
 import numpy as np
 import matplotlib.pyplot as plt
 
