@@ -67,7 +67,7 @@ double_pendulum/
 
 ```
 
-##Running the simulation for yourself
+## Running the simulation for yourself
 
 ### Requirements
 - Python 3.9 or later
