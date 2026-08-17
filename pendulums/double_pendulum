@@ -1,0 +1,44 @@
+from scipy.integrate import solve_ivp
+import numpy as np
+
+from .physics import system
+
+class double_pendulum:
+    def __init__(self, m1, m2, l1, l2, θ1_init, θ2_init, g=9.81, time=[0,30], method='RK45'):
+        self.m1 = m1
+        self.m2 = m2
+        self.l1 = l1
+        self.l2 = l2
+        self.θ1_init = θ1_init
+        self.θ2_init = θ2_init
+        self.g = g
+        self.time = time
+        self.method = method
+
+    def solve(self):
+        t_eval = np.linspace(self.time[0], self.time[1], 100* (self.time[1]-self.time[0]))
+        
+        initial_conditions = [self.θ1_init,0, self.θ2_init,0]
+        
+        sol = solve_ivp(lambda t, y: system(t, y, self), self.time, initial_conditions, t_eval=t_eval, method=self.method, rtol=1e-8, atol=1e-8)
+
+        #stores solutions for easy access
+        self.theta1 = sol.y[0]
+        self.omega1 = sol.y[1]
+        self.theta2 = sol.y[2]
+        self.omega2 = sol.y[3]
+        self.time=sol.t
+
+        return sol
+
+
+"""
+sol.t          # time values
+sol.y          # solution array- most useful
+sol.success    # whether integration succeeded
+sol.message    # solver message
+sol.nfev       # number of function evaluations
+sol.status
+sol.sol        # continuous interpolant (if requested)
+"""
+
