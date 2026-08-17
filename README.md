@@ -155,7 +155,9 @@ Finally, lyapunov takes extra arguments:
 
 - There are no damping forces, ie friction on the pivots, air resistance, etc.
 
-- Some visualtions benefit from different parameters. i.e energy, angles, omegas, phase portraits etc are more clear with a shorter time interval. However, lyanpunov and especially poincare only work (well) with a long interval, such as time=[0,1000]. 
+- Some visualtions benefit from different parameters. i.e energy, angles, omegas, phase portraits etc are more clear with a shorter time interval. However, poincare only works (well) with a long interval, such as time=[0,1000].
+
+- lyanpunov works best with a large N value
 
 - To avoid potential bugs, it's best to start the time interval from 0.
 
