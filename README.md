@@ -16,7 +16,6 @@ My simulation uses 'solve_ivp' to numerically solve the equations, finding appro
 
 The state vector: 
 
-y = [θ₁, ω₁, θ₂, ω₂]
 $$
 y= [\theta_1, \omega_1, \theta_2, \omega_2]
 $$
