@@ -14,11 +14,19 @@ My simulation uses 'solve_ivp' to numerically solve the equations, finding appro
 
 ### Equations of Motion
 
-Explain the state vector:
+The state vector: 
 
 y = [θ₁, ω₁, θ₂, ω₂]
 
-Then include the two equations of motion, preferably using LaTeX.
+contains the angles and angular velocities of the middle and end pivots, respectively.
+
+This vector is obtained by numerically approximating the solution to the two main (differential) equations of motion:
+
+\dot\omega_1 = \frac{-g(2m_1 + m_2)\sin\theta_1 - m_2 g \sin(\theta_1 - 2\theta_2) - 2m_2 \sin(\delta)\left(\omega_2^2 l_2 + \omega_1^2 l_1 \cos\delta\right)}{den_1}
+
+&
+
+\dot\omega_2 = \frac{2\sin(\delta)\left(\omega_1^2 l_1 (m_1+m_2) + g(m_1+m_2)\cos\theta_1 + \omega_2^2 l_2 m_2 \cos\delta\right)}{den_2}
 
 ### Numerical Method
 
