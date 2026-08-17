@@ -30,7 +30,7 @@ Explain:
 
 ## Project Structure
 
-```text
+```
 double_pendulum/
 |
 |-- pendulums/
@@ -64,6 +64,34 @@ double_pendulum/
 |-- README.md
 |-- pyproject.toml
 |-- requirements.txt
-```text
 
-##Running the 
+```
+
+##Running the simulation for yourself
+
+### Requirements
+- Python 3.9 or later
+- pip
+
+### Clone the repository
+
+```bash
+git clone https://github.com/ad4mh07/double_pendulum.git
+cd double_pendulum
+```
+
+### Install the package
+
+This installs `pendulums` in editable mode, along with its dependencies (numpy, matplotlib, scipy):
+
+```bash
+pip install -e .
+```
+
+### Run an example
+
+```bash
+python3 pendulums/examples/order.py
+```
+
+> **Note (macOS/Linux):** if `python` isn't recognised, use `python3` instead.
