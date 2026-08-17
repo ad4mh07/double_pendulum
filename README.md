@@ -95,3 +95,7 @@ python3 pendulums/examples/order.py
 ```
 
 > **Note (macOS/Linux):** if `python` isn't recognised, use `python3` instead.
+
+## How to use 
+
+
