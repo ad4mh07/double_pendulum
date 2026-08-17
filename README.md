@@ -23,7 +23,7 @@ contains the angles and angular velocities of the middle and end pivots, respect
 This vector is obtained by numerically approximating the solution to the two main (differential) equations of motion:
 
 $$
-\dot\omega_1 = \frac{-g(2m_1 + m_2)\sin\theta_1 - m_2 g \sin(\theta_1 - 2\theta_2) - 2m_2 \sin(\theta_1 - \theta_2)\left(\omega_2^2 l_2 + \omega_1^2 l_1 \cos(\theta_1 - \theta_2)\right)}{l_1\left(2m_1 + m_2 - m_2\cos(2\delta)\right)}
+\dot\omega_1 = \frac{-g(2m_1 + m_2)\sin\theta_1 - m_2 g \sin(\theta_1 - 2\theta_2) - 2m_2 \sin(\theta_1 - \theta_2)\left(\omega_2^2 l_2 + \omega_1^2 l_1 \cos(\theta_1 - \theta_2)\right)}{l_1\left(2m_1 + m_2 - m_2\cos(2(\theta_1 - \theta_2)\right)}
 $$
 
 &
