@@ -5,8 +5,7 @@ def angles(pendulum):
     theta1 = pendulum.theta1 
     theta2 = pendulum.theta2
     t=pendulum.time
-    
-    plt.style.use("dark_background") 
+     
     plt.plot(t,theta1, color='orange', label='theta1')
     plt.plot(t,theta2, color= 'cyan', label='theta2')
 
