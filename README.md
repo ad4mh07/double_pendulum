@@ -136,12 +136,31 @@ python3 pendulums/examples/order.py
 
 ## 4.8: Using the function
 As per 3.2, you can run your own simulation in custom.py, and then call any of the different visulatiuons. It's set up so that all that needs to be done is to determine the arguments / initial conditions. Here's a run down of the arguments taken:
+  
+  m1 = The mass of the first mass / pivot
+  m2 = the mass of the second / end mass
+  l1 = the length of the first (weightless) rod
+  l2 = the length of the second (weightless) rod
+  θ1_init = the initial angle of the first pivot / mass
+  θ2_init = the initial angle of the second mass
+  time = the time interval to solve over
+
+Finally, lyapunov takes extra arguments:
+  (p1: reference pendulum)
+  N: number of renormalization steps
+  dt: duration of each step in seconds
+  delta: initial theta_1 offset
 
 
 
+### 5: Limitations / other
+- The rods are presumed to have no mass and be rigid (inextensible and inflexible)
 
-### 5: Other
-some visualtions benefit from different parameters. i.e energy, angles, omegas, phase portraits etc are more clear with a shorter time interval. However, lyanpunov and especially poincare only work (well) with a long interval, such as time=[0,1000]. 
+- There are no damping forces, ie friction on the pivots, air resistance, etc.
+
+- Some visualtions benefit from different parameters. i.e energy, angles, omegas, phase portraits etc are more clear with a shorter time interval. However, lyanpunov and especially poincare only work (well) with a long interval, such as time=[0,1000]. 
+
+- To avoid potential bugs, it's best to start the time interval from 0.
 
 
 
