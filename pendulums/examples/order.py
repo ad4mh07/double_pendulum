@@ -1,9 +1,8 @@
-from pendulums.double_pendulum import double_pendulum
+from ..double_pendulum import double_pendulum
 
 from ..visualisations.animate import animate
 from ..visualisations.trajectory import trajectory
-from ..visualisations.angles import angles
-from ..visualisations.angles import omegas
+from ..visualisations.angles import angles, omegas
 from ..visualisations.energy import energy
 from ..visualisations.phase_portrait import phase_portrait
 from ..visualisations.poincare import poincare
