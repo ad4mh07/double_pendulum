@@ -170,10 +170,12 @@ Animation:
 ![Animation](figures/double_pendulum.gif)
 
 
+
 Angles over time:
 
 
 ![Angles over time](figures/angles.png)
+
 
 
 Energy stores over time:
@@ -182,25 +184,38 @@ Energy stores over time:
 ![Energy stores over time](figures/energy.png)
 
 
+
 Lyapunov exponent estimation:
 
 
 ![Lyapunov exponent estimation](figures/lyapunov.png)
 
 
+
 Angular velocities over time:
+
+
 ![Angular velocities over time](figures/omegas.png)
 
 
+
 Phase portraits]:
+
+
 ![Phase portraits](figures/phase_portrait.png)
 
 
+
 Poincarè analysis:
+
+
 ![Poincarè analysis](figures/poincare.png)
 
 
+
 Trajectory (trace of the end mass):
+
+
 ![Trajectory (trace of the end mass)](figures/trajectory.png)
 
 
