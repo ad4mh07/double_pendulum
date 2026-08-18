@@ -199,7 +199,7 @@ Angular velocities over time:
 
 
 
-Phase portraits]:
+Phase portraits:
 
 
 ![Phase portraits](figures/phase_portrait.png)
