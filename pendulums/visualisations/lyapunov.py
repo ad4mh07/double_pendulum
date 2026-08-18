@@ -1,4 +1,4 @@
-from pendulums.double_pendulum import double_pendulum
+from ..double_pendulum import double_pendulum
 import numpy as np
 from scipy.integrate import solve_ivp
 from pendulums.physics import system
